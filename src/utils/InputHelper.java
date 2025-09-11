@@ -6,14 +6,14 @@ public class InputHelper {
     private static final Scanner scanner  = new Scanner(System.in);
 
     public static String getString(String message){
-        System.out.println(message + ": ");
+        System.out.print(message + ": ");
         return scanner.nextLine();
     }
 
     public static int getInt(String message){
-        System.out.println(message + ": ");
+        System.out.print(message + ": ");
         while (!scanner.hasNextInt()){
-            System.out.println("Please enter a valid number.");
+            System.out.print("Please enter a valid number.");
             scanner.next();
         }
         return scanner.nextInt();
