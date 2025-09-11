@@ -10,7 +10,7 @@ public class Customer extends User {
         this.phoneNumber = "000000000";
     }
 
-    public Customer(int id, String name, String email, String password, String address) {
+    public Customer(int id, String name, String email, String password, String address, String phoneNumber) {
         super(id, name, email, password);
         this.address = address;
         this.phoneNumber = phoneNumber;

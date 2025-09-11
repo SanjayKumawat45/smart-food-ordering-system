@@ -28,7 +28,7 @@ public class AuthUi {
         String address = InputHelper.getString("Enter address");
         String phoneNumber = InputHelper.getString("Enter mobile number");
 
-        Customer customer = new Customer(id, name, email, password, address);
+        Customer customer = new Customer(id, name, email, password, address, phoneNumber);
         DataStore.customer.add(customer);
 
         System.out.println("✅ Registration successful. Welcome, " + name);
