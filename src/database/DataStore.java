@@ -16,5 +16,6 @@ public class DataStore {
         menu.add(new FoodItem(2, "Pizza", 250, FoodCategory.MAIN_COURSE));
         menu.add(new FoodItem(3, "Pasta", 180, FoodCategory.STARTER));
         menu.add(new FoodItem(4, "Coffee", 90, FoodCategory.DESSERT));
+        customer.add(new Customer(1, "test", "test", "test", "Shyam Kripa", "1234567890"));
     }
 }

@@ -69,9 +69,29 @@ public class Menu {
                 System.out.println("❌ No items selected.");
                 return;
             }
+
             Order order = orderService.placeOrder(customer, items);
-            String method = InputHelper.getString("Enter payment method (UPI/Card/Cash)");
+            System.out.println("Total: "+ order.getTotalAmount());
+
+
+
+            InputHelper.getString("");
+
+            String method;
+            while (true) {
+                method = InputHelper.getString("Enter payment method (UPI/Card/Cash)").trim();
+
+                if (method.equalsIgnoreCase("UPI") ||
+                        method.equalsIgnoreCase("Card") ||
+                        method.equalsIgnoreCase("Cash")) {
+                    break;
+                } else {
+                    System.out.println("❌ Invalid payment method. Please enter UPI, Card, or Cash.");
+                }
+            }
+
             Payment payment = paymentService.processPayment(order, method);
+
 
             System.out.println("✅ Payment Status: " + payment);
         } catch (Exception e){

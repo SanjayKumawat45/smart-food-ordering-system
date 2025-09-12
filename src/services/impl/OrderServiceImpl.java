@@ -9,7 +9,7 @@ import services.OrderService;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderServiceImpl implements OrderService {
+public class OrderServiceImpl implements OrderService  {
 
     private List<Order> orders;
 
@@ -17,11 +17,13 @@ public class OrderServiceImpl implements OrderService {
         this.orders = new ArrayList<>();
     }
 
+
     @Override
     public Order placeOrder(Customer customer, List<FoodItem> foodItems) throws InvalidOrderException {
         if (customer == null || foodItems == null || foodItems.isEmpty()){
             throw new InvalidOrderException("Invalid order: Customer or food items cannot be empty.");
         }
+
         int orderId = orders.size() + 1;
         Order order = new Order(orderId, customer);
 
